@@ -1,3 +1,12 @@
+body {
+    height: 100vh;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
 #form {
     margin-top: 30px;
 }
@@ -13,4 +22,69 @@
 
 .textError {
     color: crimson;
+    margin-top: 10px;
+    font-size: 24px;
 }
+
+
+
+/* Online timer*/
+
+.onlineTimer {
+border: 3px solid green;
+padding: 30px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+}
+
+.textTimer {
+    font-size: 120px;
+    color: green;
+    text-align: center;
+    margin: 100px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.sign {
+line-height: 330px;
+color: green;
+font-size: 66px;
+}
+
+.btnInstall {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    color: purple;
+}
+
+.entering {
+    background-color: buttonface;
+    height: 36px;
+    width: 100px;
+    font-size: 18px;
+    color: purple;
+    border-style: outset;
+    border: 1px solid buttonborder;
+    text-align: center;
+}
+
+.btnClick {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
