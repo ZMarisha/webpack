@@ -1,8 +1,12 @@
+import '../style/style.css';
+import alarm from '!file-loader!../alarm/zvuk.mp3'
 import getDateDiff from './getDateDiff.js';
 import { printError, printResult } from './printResult.js';
 import showTime from './showTimeTimer.js';
-import {} from './luxon.js';
-import {} from './howler.js';
+import { Howl } from 'howler';
+import xor from 'lodash/xor';
+
+console.log(xor([1, 2], [2, 6]));
 
 
 
@@ -42,7 +46,7 @@ let countDown;
 //Alarm
 const howlerEl = document.querySelector('.btnAlarm');
 var sound = new Howl({
-    src: ['/alarm/zvuk-budilnika-quotgood-morningquot-miui-33064.mp3'],
+    src: alarm,
   });
 
 howlerEl.addEventListener('click', () => {
