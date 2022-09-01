@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundlerAnalyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     entry: './js/index.js',
@@ -18,19 +19,20 @@ module.exports = {
                 }
             },
             {
-                test: /\css$/i,
+                test: /\.css$/i,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
             }
         ]
     },
     plugins: [
+        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: path.join('style', '[name].[contenthash].css')
         }),
-        new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'index.html') })
+        new BundlerAnalyzer()
     ],
     devServer: {
-        port: 3000,
-        hot: true
-      }
+        hot: true,
+        open: true
+    }
 }
